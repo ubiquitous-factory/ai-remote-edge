@@ -11,6 +11,6 @@
     },
     "Mounts": [],
     "Volumes": [],
-    "CapAdd": [],
+    "CapAdd": ["ALL"],
     "Ports": []
 }

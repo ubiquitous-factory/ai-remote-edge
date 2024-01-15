@@ -40,6 +40,6 @@ cargo run
 ### container
 
 ```
-podman run --device /dev/ttyACM0 quay.io/ubiquitous-factory/serial-reader:latest
+podman run --device /dev/ttyACM0 --group-add keep-groups quay.io/ubiquitous-factory/serial-reader:latest
 ```
 
