@@ -1,7 +1,18 @@
 targetConfigs:
 - url: https://github.com/ubiquitous-factory/ai-remote-edge
-  branch: main
-  raw:
-  - name: serial-reader-deploy
-    targetPath: deploy/serial-reader
+  systemd:
+  - name: sysd-serial-reader-deploy
+    targetPath: deploy/serial-reader/systemd
+    root: false
+    enable: true
     schedule: "*/1 * * * *"
+  branch: main
+# Normal configs don't work as the device cannot be exposed
+# If you want a non-systemd way of doing this please watch this issue
+# https://github.com/containers/podman/issues/17833
+# - url: https://github.com/ubiquitous-factory/ai-remote-edge
+#   branch: main
+#   raw:
+#   - name: serial-reader-deploy
+#     targetPath: deploy/serial-reader
+#     schedule: "*/1 * * * *"

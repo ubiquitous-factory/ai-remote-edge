@@ -4,6 +4,8 @@
 
 This repo contains the configuration to deploy all the assets in the edge environment using `fetchit`.
 
+Currently this repo uses the systemd based approach as arguments such as device and groups need passing to the podman run command and these aren't mapped in the container config.
+
 ## install
 
 Enable the podman socket api
