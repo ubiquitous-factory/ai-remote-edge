@@ -1,0 +1,16 @@
+{
+    "Image": "quay.io/ubiquitous-factory/serial-reader:latest",
+    "Name": "serial-reader",
+    "Device": "/dev/ttyACM0",
+    "Env": {
+        "PORT_NAME": "/dev/ttyACM0",
+        "DATA_PATH": "/tmp",
+        "BAUD_RATE": "57600",
+        "LINE_COUNT": "200",
+        "FILE_COUNT": "200"
+    },
+    "Mounts": [],
+    "Volumes": [],
+    "CapAdd": [],
+    "Ports": []
+}
