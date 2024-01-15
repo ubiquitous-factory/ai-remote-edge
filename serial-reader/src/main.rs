@@ -12,6 +12,8 @@ fn main() {
 
     let port_name = env::var("PORT_NAME").unwrap_or_else(|_| "/dev/ttyACM0".to_string());
 
+    let data_path = env::var("DATA_PATH").unwrap_or_else(|_| "/tmp".to_string());
+
     let baud_rate = env::var("BAUD_RATE")
         .unwrap_or_else(|_| "57600".to_string())
         .parse::<u32>()
@@ -36,7 +38,7 @@ fn main() {
     let mut current_file = 0;
     let mut current_line = 1;
 
-    let file_name = format!("{:0>4}.csv", current_file);
+    let file_name = format!("{}/{:0>4}.csv", data_path, current_file);
     assert_eq!("0000", format!("{:0>4}", "0"));
 
     let mut file = OpenOptions::new()

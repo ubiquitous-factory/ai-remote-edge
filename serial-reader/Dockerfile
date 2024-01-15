@@ -1,14 +1,14 @@
 FROM registry.access.redhat.com/ubi8/ubi as rhel8builder
 
-RUN yum install -y gcc openssl-devel && \
+RUN yum install -y gcc openssl-devel libudev-devel && \
     rm -rf /var/cache/dnf && \
     curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+ENV PATH=/root/.cargo/bin:${PATH}
 
 COPY . /app-build
 
 WORKDIR "/app-build"
-
-ENV PATH=/root/.cargo/bin:${PATH}
 
 RUN cargo build --release
 
