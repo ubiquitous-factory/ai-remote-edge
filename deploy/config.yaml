@@ -7,7 +7,7 @@ targetConfigs:
   - name: sysd-serial-reader-deploy
     targetPath: deploy/serial-reader/systemd
     root: false
-    enable: false
+    enable: true
     schedule: "*/1 * * * *"
   branch: main
 # Normal configs don't work as the device cannot be exposed
