@@ -1,16 +1,16 @@
 configReload:
   configURL: https://raw.githubusercontent.com/ubiquitous-factory/ai-remote-edge/main/deploy/config.yaml
   schedule: "*/2 * * * *"
-targetConfigs:
-- url: https://github.com/ubiquitous-factory/ai-remote-edge
-  systemd:
-  - name: sysd-serial-reader-deploy
-    targetPath: deploy/serial-reader/systemd
-    root: false
-    enable: false
-    stop: true
-    schedule: "*/1 * * * *"
-  branch: main
+# targetConfigs:
+# - url: https://github.com/ubiquitous-factory/ai-remote-edge
+#   systemd:
+#   - name: sysd-serial-reader-deploy
+#     targetPath: deploy/serial-reader/systemd
+#     root: false
+#     enable: false
+#     stop: true
+#     schedule: "*/1 * * * *"
+#   branch: main
 
 # Normal configs don't work as the device cannot be exposed
 # If you want a non-systemd way of doing this please watch this issue
